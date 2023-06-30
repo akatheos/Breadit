@@ -7,14 +7,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuItem,
 } from "./ui/DropdownMenu";
-import { User } from "@prisma/client";
 import { FC } from "react";
 import UserAvatar from "./UserAvatar";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 
 interface UserMenuProps {
-  user: Pick<User, "username" | "image" | "email">;
+  user: {
+    username: string | null | undefined;
+    image: string | null | undefined;
+    email: string | null | undefined;
+  };
 }
 
 const UserMenu: FC<UserMenuProps> = ({ user }) => {
