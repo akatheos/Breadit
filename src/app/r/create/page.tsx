@@ -35,7 +35,8 @@ const Page = () => {
         if (err.response?.status === 422) {
           return toast({
             title: "Invalid subbreadit name !",
-            description: "Please choose a name between 3 and 21 characters.",
+            description:
+              "Please choose a name between 3 and 21 characters and with no whitespaces and special characters.",
             variant: "destructive",
           });
         }
@@ -51,6 +52,10 @@ const Page = () => {
     },
     onSuccess: (data) => {
       router.push(`/r/${data}`);
+      toast({
+        title: "Subbreadit created successfully !",
+        description: "Congratulations, You have created a new subbreadit.",
+      });
     },
   });
 

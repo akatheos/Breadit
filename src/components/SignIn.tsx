@@ -11,7 +11,7 @@ const SignIn: FC = ({}) => {
         <h1 className="text-2xl font-bold tracking-tight">Welcome back</h1>
         <p className="text-sm max-w-xs mx-auto">
           By continuing, you are setting up a breadit account and agree to our
-          User Agreement and Privacy Policy
+          User Agreement and Privacy Policy.
         </p>
         <UserAuthForm />
       </div>

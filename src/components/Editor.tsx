@@ -12,6 +12,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "./ui/Button";
+import { useCustomToast } from "@/hooks/use-custom-toast";
 
 interface EditorProps {
   subbreaditId: string;
@@ -35,6 +36,7 @@ const Editor: FC<EditorProps> = ({ subbreaditId }) => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const pathname = usePathname();
   const router = useRouter();
+  const { loginToast } = useCustomToast();
   useEffect(() => {
     if (typeof window !== "undefined") {
       setIsMounted(true);
@@ -211,6 +213,3 @@ const Editor: FC<EditorProps> = ({ subbreaditId }) => {
 };
 
 export default Editor;
-function loginToast(): unknown {
-  throw new Error("Function not implemented.");
-}
