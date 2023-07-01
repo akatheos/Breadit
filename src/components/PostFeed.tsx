@@ -15,6 +15,9 @@ interface PostFeedProps {
   subbreaditName?: string;
 }
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 const PostFeed: FC<PostFeedProps> = ({ initialPosts, subbreaditName }) => {
   const lastPostRef = useRef<HTMLElement>(null);
   const [mounted, setMounted] = useState<boolean>(false);
